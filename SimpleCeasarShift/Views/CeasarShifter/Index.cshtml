@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Index";
+    AjaxOptions options = new AjaxOptions
+    {
+        UpdateTargetId = "SearchResults",
+        InsertionMode = InsertionMode.Replace
+    };
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+{
+    <table class="table form-group">
+        <tr>
+            <td>
+                Input:
+            </td>
+            <td>
+                Output:
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.TextBox("inputString")
+            </td>
+            <td>
+                @ViewBag.outputString
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.RadioButton("encrypt", "encrypt", true)<label>Encrypt</label>
+                @Html.RadioButton("encrypt", "decrypt") <label>Decrypt</label>
+            </td>
+            <td>
+                <input type="submit" value="submit" class="btn btn-default btn-lg" />
+            </td>
+        </tr>
+    </table>
+}
